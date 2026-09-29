@@ -34,6 +34,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY || secrets.PRIVATE_KEY || secrets.KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE || secrets.PASSPHRASE }}
           port: ${{ secrets.PORT }}
           script: |
             eval "$(ssh-agent -s)"
